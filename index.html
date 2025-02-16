@@ -112,13 +112,12 @@
             </ul>
 
             <p><strong>Example URL:</strong></p>
-            <code>https://www.marksandspencer.com/ie/l/men/mens-shirts?filter=Colour%253D%7EFit%253DRegular%2520fit</code>
+            <code>https://www.marksandspencer.com/ie/l/men/mens-shirts/fs5/regular-fit </code>
             <ul>
-                <li><strong>Base:</strong> <code>https://www.marksandspencer.com/ie/l/men/mens-shirts</code></li>
+                <li><strong>Base:</strong> <code>https://www.marksandspencer.com/ie</code></li>
                 <li><strong>Filters:</strong>
                     <ul>
-                        <li><code>Fit=Regular</code>: This filter specifies that the user is looking for regular fit shirts.</li>
-                        <li><code>Colour=</code>: No colour specified.</li>
+                        <li><code>regular-fit</code>: This filter specifies that the user is looking for regular fit shirts.</li>
                     </ul>
                 </li>
             </ul>
@@ -127,11 +126,9 @@
             <ul>
                 <li><code>https://www.marksandspencer.com/ie/l/men/mens-shirts/fs5/regular-fit#intid=finav_mw_plp_Regular%20Fit%20Shirts_foundit_fi_fi-Mens-Shirts_top_plp_12_1</code></li>
             </ul>
-            <p><strong>Note:</strong> The first URL is generated in the simplest way using filters (<code>?filter=...</code>), while the second URL is manually copied from the website. Both URLs work and lead to the same result. 
+            <p><strong>Note:</strong> The first URL is generated in the simplest way, filtering with a direct path instead of query strings, while the second URL is manually copied from the website. Both URLs work and lead to the same result. 
 
-            The difference is due to the fact that the manually copied URL includes additional tracking parameters (<code>#intid</code>) and a specific path (<code>/fs5/regular-fit</code>) added by the website for navigation and analytics purposes. 
-
-            The generated URLs from this form use query parameters to specify preferences directly.</p>
+            The difference is due to the fact that the manually copied URL includes additional tracking parameters (<code>#intid</code>).</p>
 
             <div class="form-row">
                 <div class="form-column">
@@ -188,14 +185,12 @@
                 return;
             }
 
-            if (fit === 'regular-fit') {
-                deepLink = `${baseUrl}?filter=Colour%253D${color}%7EFit%253DRegular%2520fit`;
-            } else if (fit === 'slim-fit') {
-                deepLink = `${baseUrl}/fs5/slim-fit/${color}`;
-            } else if (color) {
-                deepLink = `${baseUrl}?filter=Colour%253D${color}`; 
+            if (fit && color) {
+                deepLink = `${baseUrl}/fs5/${fit}/${color}`;
+            } else if (fit) {
+                deepLink = `${baseUrl}/fs5/${fit}`;
             } else {
-                deepLink = baseUrl;
+                deepLink = `${baseUrl}/fs5/${color}`;
             }
 
             errorMessage.innerText = ""; 
@@ -206,5 +201,7 @@
             openLinkButton.style.display = "inline"; 
         }
     </script>
+
+
 </body>
 </html>
