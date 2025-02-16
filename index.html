@@ -105,30 +105,24 @@
         <form id="linkForm" aria-labelledby="form-description">
             <p id="form-description">Use this form to generate deep links for Marks & Spencer shirts by selecting the fit and/or color.</p>
 
-            <p><strong>How the URL Works Using Filters:</strong></p>
-            <ul>
-                <li><strong>Base:</strong> The base URL is the main address of the website and sometimes includes the country of relevance. For example, <code>https://www.marksandspencer.com/ie</code>.</li>
-                <li><strong>Filter:</strong> Filters are parameters added to the URL that specify certain criteria for the content being accessed. They help narrow down the results based on user preferences.</li>
-            </ul>
+            <p><h3>The URL works by following a structured path that organizes categories and filters</strong></h3>
 
-            <p><strong>Example URL:</strong></p>
-            <code>https://www.marksandspencer.com/ie/l/men/mens-shirts/fs5/regular-fit </code>
-            <ul>
-                <li><strong>Base:</strong> <code>https://www.marksandspencer.com/ie</code></li>
-                <li><strong>Filters:</strong>
-                    <ul>
-                        <li><code>regular-fit</code>: This filter specifies that the user is looking for regular fit shirts.</li>
-                    </ul>
-                </li>
-            </ul>
+            <u><p><h4>Example URL</h4></p></u>
+            <code>https://www.marksandspencer.com/ie/l/men/mens-shirts/fs5/regular-fit</code>
+                <p>Hierarchy:</p>
+                <ol>
+                    <li><code>https://www.marksandspencer.com/ie</code> - The base URL, which includes the country of relevance.</li>
+                    <li><code>/l/</code> - Indicates a product listing.</li>
+                    <li><code>/men/</code> - Specifies the men’s category.</li>
+                    <li><code>/mens-shirts/</code> - Subcategory that narrows down to shirts.</li>
+                    <li><code>/fs5/</code> - An internal filter code.</li>
+                    <li><code>/regular-fit/</code> - Applies an additional filter for fit type (e.g., regular fit shirts).</li>
+                </ol>
 
-            <p><strong>Alternate URL From Website:</strong></p>
-            <ul>
-                <li><code>https://www.marksandspencer.com/ie/l/men/mens-shirts/fs5/regular-fit#intid=finav_mw_plp_Regular%20Fit%20Shirts_foundit_fi_fi-Mens-Shirts_top_plp_12_1</code></li>
-            </ul>
-            <p><strong>Note:</strong> The first URL is generated in the simplest way, filtering with a direct path instead of query strings, while the second URL is manually copied from the website. Both URLs work and lead to the same result. 
+            <u><p><h4>Alternate URL from Website</h4></p></u>
+            <code>https://www.marksandspencer.com/ie/l/men/mens-shirts/fs5/regular-fit#intid=finav_mw_plp_Regular%20Fit%20Shirts_foundit_fi_fi-Mens-Shirts_top_plp_12_1</code>
 
-            The difference is due to the fact that the manually copied URL includes additional tracking parameters (<code>#intid</code>).</p>
+            <p><strong>Note:</strong> The first URL is structured in the simplest way. The second URL is manually copied from the website and includes additional tracking parameters (<code>#intid</code>). Both URLs lead to the same result, but the tracking parameters help the website analyze user interactions.</p>
 
             <div class="form-row">
                 <div class="form-column">
